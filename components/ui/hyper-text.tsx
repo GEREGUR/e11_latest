@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
-
 import { cn } from "@/lib/utils";
 
 interface HyperTextProps {
@@ -11,6 +10,7 @@ interface HyperTextProps {
   framerProps?: Variants;
   className?: string;
   animateOnLoad?: boolean;
+  autoTriggerInterval?: number; // New prop for auto-trigger interval (in milliseconds)
 }
 
 const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -27,15 +27,20 @@ export default function HyperText({
   },
   className,
   animateOnLoad = true,
+  autoTriggerInterval = 2000,
 }: HyperTextProps) {
   const [displayText, setDisplayText] = useState(text.split(""));
   const [trigger, setTrigger] = useState(false);
-  const interations = useRef(0);
+  const iterations = useRef(0);
   const isFirstRender = useRef(true);
+  const animationInProgress = useRef(false);
 
   const triggerAnimation = () => {
-    interations.current = 0;
-    setTrigger(true);
+    if (!animationInProgress.current) {
+      iterations.current = 0;
+      setTrigger(true);
+      animationInProgress.current = true;
+    }
   };
 
   useEffect(() => {
@@ -46,20 +51,21 @@ export default function HyperText({
           isFirstRender.current = false;
           return;
         }
-        if (interations.current < text.length) {
+        if (iterations.current < text.length) {
           setDisplayText((t) =>
             t.map((l, i) =>
               l === ""
                 ? l
-                : i <= interations.current
+                : i <= iterations.current
                   ? text[i]
                   : alphabets[getRandomInt(26)],
             ),
           );
-          interations.current = interations.current + 0.1;
+          iterations.current = iterations.current + 0.1;
         } else {
           setTrigger(false);
           clearInterval(interval);
+          animationInProgress.current = false;
         }
       },
       duration / (text.length * 10),
@@ -67,6 +73,17 @@ export default function HyperText({
     // Clean up interval on unmount
     return () => clearInterval(interval);
   }, [text, duration, trigger, animateOnLoad]);
+
+  // New useEffect for auto-triggering animation
+  useEffect(() => {
+    if (autoTriggerInterval > 0) {
+      const autoTrigger = setInterval(() => {
+        triggerAnimation();
+      }, autoTriggerInterval);
+
+      return () => clearInterval(autoTrigger);
+    }
+  }, [autoTriggerInterval]);
 
   return (
     <div

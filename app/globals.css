@@ -6,8 +6,26 @@ html {
   font-family: var(--font-geist);
 }
 
+body {
+  @apply font-mono;
+}
+
 @layer base {
   :root {
     --radius: 0.5rem;
+  }
+}
+
+.light body {
+  --tile: var(--neutral-100);
+}
+
+.dark body {
+  --tile: var(--neutral-900);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tile: var(--neutral-900);
   }
 }

@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
+import { SmoothScroll } from "./SmoothScrollWrapper";
 
 export const MaxWidthWrapper = ({
   className,
@@ -15,7 +16,7 @@ export const MaxWidthWrapper = ({
         className,
       )}
     >
-      {children}
+      <SmoothScroll>{children}</SmoothScroll>
     </div>
   );
 };

@@ -4,7 +4,17 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 
 export const AboutMe = () => {
-  const skills = ["NEXT.JS", "React", "Tailwind", "TypeScript", ""];
+  const skills = [
+    "NEXT.JS",
+    "React",
+    "Tailwind",
+    "TypeScript",
+    "TansTack Query",
+    "Drizzle",
+    "React Native",
+    "Zustand",
+    "Much more...",
+  ];
 
   return (
     <div className="w-full py-12  font-mono md:py-24 lg:py-32">
@@ -27,7 +37,7 @@ export const AboutMe = () => {
               <Badge
                 key={skill}
                 variant="outline"
-                className="text-sm md:text-base px-3 py-1"
+                className="text-sm cursor-crosshair select-none md:text-base px-3 py-1 transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-md badge-hover-effect"
               >
                 {skill}
               </Badge>
