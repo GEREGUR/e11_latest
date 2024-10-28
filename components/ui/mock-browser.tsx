@@ -11,10 +11,11 @@ export const BrowserComponent: React.FC<{
       "transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-xl dark:hover:shadow-neutral-800/30",
       "before:absolute before:inset-0 before:z-[-1] before:rounded-lg before:transition-opacity before:duration-300 before:ease-in-out",
       "before:opacity-0 hover:before:opacity-100",
-      "before:bg-gradient-to-r before:from-pink-500/20 before:via-purple-500/20 before:to-cyan-500/20",
+      "before:bg-gradient-to-br before:from-indigo-500/20 before:via-purple-500/20 before:to-pink-500/20",
       "dark:before:from-pink-500/10 dark:before:via-purple-500/10 dark:before:to-cyan-500/10",
       className,
     )}
+    // bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
   >
     <div
       className={

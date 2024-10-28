@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { MaxWidthWrapper } from "@/components/core/MaxWidthWrapper";
 import { DockDemo } from "@/components/dock/Dock";
-// import { Tiles } from "@/components/ui/bg";
+import { Tiles } from "@/components/ui/bg";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,12 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} relative overflow-x-hidden antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} relative min-h-screen overflow-x-hidden bg-background text-foreground antialiased`}
       >
-        {/* <div className={"absolute top-0 left-0 h-full w-full"}>
-          <Tiles rows={15} cols={24} />
-        </div> */}
-        <MaxWidthWrapper>{children}</MaxWidthWrapper>
+        <div className="fixed inset-0 z-[-1] overflow-hidden">
+          <Tiles />
+        </div>
+        <MaxWidthWrapper className="relative z-10">{children}</MaxWidthWrapper>
         <div className="fixed bottom-3 left-0 right-0 z-50 mx-auto">
           <DockDemo />
         </div>

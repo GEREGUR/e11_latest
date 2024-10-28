@@ -5,12 +5,14 @@ import { BrowserComponent } from "@/components/ui/mock-browser";
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen w-full grid place-items-center">
-      <section className="min-h-screen w-full grid place-items-center">
-        <HyperText
-          className="text-4xl font-bold text-black dark:text-white"
-          text="3gorRuba1l0_"
-        />
+    <div className="grid min-h-screen w-full place-items-center">
+      <section className="grid min-h-screen w-full place-items-center">
+        <div className="z-30 mb-6 rounded-xl border bg-white p-12">
+          <HyperText
+            className="text-4xl font-bold text-black dark:text-white"
+            text="3gorRuba1l0_"
+          />
+        </div>
       </section>
 
       <section className="w-full">
