@@ -15,15 +15,15 @@ const experiences = [
     tech: ["Next.js", "TypeScript", "TailwindCSS"],
   },
   {
-    year: "2022",
+    year: "2024",
     role: "Frontend Developer",
     company: "Casher Collection",
     description: "Developed e-commerce platform features",
     tech: ["Next.js", "TypeScript", "TailwindCSS"],
   },
   {
-    year: "2021",
-    role: "Lead Frontend Developer",
+    year: "2023",
+    role: "Frontend Developer",
     company: "MyAI Dol Bot",
     description: "Created Telegram bot interface and features",
     tech: ["Node.js", "React", "Telegram API"],
