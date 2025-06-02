@@ -19,7 +19,7 @@ const getRandomInt = (max: number) => Math.floor(Math.random() * max);
 
 export default function HyperText({
   text,
-  duration = 800,
+  duration = 1200,
   framerProps = {
     initial: { opacity: 0, y: -10 },
     animate: { opacity: 1, y: 0 },
@@ -27,7 +27,7 @@ export default function HyperText({
   },
   className,
   animateOnLoad = true,
-  autoTriggerInterval = 2000,
+  autoTriggerInterval = 3000,
 }: HyperTextProps) {
   const [displayText, setDisplayText] = useState(text.split(""));
   const [trigger, setTrigger] = useState(false);
@@ -87,7 +87,7 @@ export default function HyperText({
 
   return (
     <div
-      className="overflow-hidden py-2 flex cursor-default scale-100"
+      className="flex scale-100 cursor-default overflow-hidden py-2"
       onMouseEnter={triggerAnimation}
     >
       <AnimatePresence mode="wait">

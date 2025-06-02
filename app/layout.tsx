@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { MaxWidthWrapper } from "@/components/core/MaxWidthWrapper";
-import { DockDemo } from "@/components/dock/Dock";
 import { Tiles } from "@/components/ui/bg";
 
 const geistSans = localFont({
@@ -35,9 +34,6 @@ export default function RootLayout({
           <Tiles />
         </div>
         <MaxWidthWrapper className="relative z-10">{children}</MaxWidthWrapper>
-        <div className="fixed bottom-3 left-0 right-0 z-50 mx-auto">
-          <DockDemo />
-        </div>
       </body>
     </html>
   );

@@ -1,170 +1,171 @@
-import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
-import { BellIcon, Share2Icon } from "lucide-react";
-
+import { GlobeIcon, CodeIcon, BotIcon, LayoutIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import Marquee from "@/components/ui/marquee";
 
-const files = [
+const projects = [
   {
-    name: "bitcoin.pdf",
-    body: "Bitcoin is a cryptocurrency invented in 2008 by an unknown person or group of people using the name Satoshi Nakamoto.",
+    name: "Company Central",
+    description: "Business directory and company registry platform",
+    tech: "Next.js, TypeScript, Tailwind CSS, Zustand",
+    role: "Frontend Developer",
+    url: "companycentral.co.uk",
   },
   {
-    name: "finances.xlsx",
-    body: "A spreadsheet or worksheet is a file made of rows and columns that help sort data, arrange data easily, and calculate numerical data.",
+    name: "Casher Collection",
+    description: "E-commerce fashion platform",
+    tech: "Next.js, TypeScript, Tailwind CSS, Zustand",
+    role: "Frontend Developer",
+    url: "cashercollection.com",
   },
   {
-    name: "logo.svg",
-    body: "Scalable Vector Graphics is an Extensible Markup Language-based vector image format for two-dimensional graphics with support for interactivity and animation.",
+    name: "MyAI Dol Bot",
+    description: "Telegram AI assistant bot",
+    tech: "Next.js, TypeScript, Tailwind CSS, OpenAI",
+    role: "Frontend Developer",
+    url: "t.me/myaidol_bot",
   },
   {
-    name: "keys.gpg",
-    body: "GPG keys are used to encrypt and decrypt email, files, directories, and whole disk partitions and to authenticate messages.",
-  },
-  {
-    name: "seed.txt",
-    body: "A seed phrase, seed recovery phrase or backup seed phrase is a list of words which store all the information needed to recover Bitcoin funds on-chain.",
+    name: "MyAI Dol Bot",
+    description: "Telegram AI assistant bot",
+    tech: "Next.js, TypeScript, Tailwind CSS, OpenAI",
+    role: "Frontend Developer",
+    url: "t.me/myaidol_bot",
   },
 ];
 
 const features = [
   {
-    Icon: FileTextIcon,
-    name: "Save your files",
-    description: "We automatically save your files as you type.",
-    href: "#",
-    cta: "Learn more",
-    className: "col-span-3 lg:col-span-1",
-    background: (
-      <Marquee
-        pauseOnHover
-        className="absolute top-10 [--duration:20s] [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] "
-      >
-        {files.map((f, idx) => (
-          <figure
-            key={idx}
-            className={cn(
-              "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
-              "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-              "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-              "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none",
-            )}
-          >
-            <div className="flex flex-row items-center gap-2">
-              <div className="flex flex-col">
-                <figcaption className="text-sm font-mono dark:text-white ">
-                  {f.name}
-                </figcaption>
-              </div>
-            </div>
-            <blockquote className="mt-2 text-xs">{f.body}</blockquote>
-          </figure>
-        ))}
-      </Marquee>
-    ),
-  },
-  {
-    Icon: BellIcon,
-    name: "Notifications",
-    description: "Get notified when something happens.",
-    href: "#",
-    cta: "Learn more",
+    Icon: GlobeIcon,
+    name: "Company Central",
+    description: "Lead frontend developer for business directory platform",
+    href: "https://companycentral.co.uk",
+    cta: "Visit Site",
     className: "col-span-3 lg:col-span-2",
     background: (
       <Marquee
         pauseOnHover
-        className="absolute top-10 [--duration:20s] [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] "
+        className="absolute top-10 [--duration:20s] [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)]"
       >
-        {files.map((f, idx) => (
+        {projects.slice(0, 2).map((p, idx) => (
           <figure
             key={idx}
             className={cn(
-              "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
+              "relative w-48 cursor-pointer overflow-hidden rounded-xl border p-4",
               "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
               "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
               "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none",
             )}
           >
-            <div className="flex flex-row items-center gap-2">
-              <div className="flex flex-col">
-                <figcaption className="text-sm font-mono dark:text-white ">
-                  {f.name}
-                </figcaption>
-              </div>
+            <div className="flex flex-col">
+              <figcaption className="font-mono text-sm font-bold dark:text-white">
+                {p.name}
+              </figcaption>
+              <div className="text-muted-foreground mt-1 text-xs">{p.role}</div>
             </div>
-            <blockquote className="mt-2 text-xs">{f.body}</blockquote>
+            <blockquote className="mt-2 text-xs">{p.tech}</blockquote>
           </figure>
         ))}
       </Marquee>
     ),
   },
   {
-    Icon: Share2Icon,
-    name: "Integrations",
-    description: "Supports 100+ integrations and counting.",
-    href: "#",
-    cta: "Learn more",
+    Icon: CodeIcon,
+    name: "Casher Collection",
+    description: "E-commerce platform development",
+    href: "https://cashercollection.com",
+    cta: "View Project",
+    className: "col-span-3 lg:col-span-1",
+    background: (
+      <Marquee
+        pauseOnHover
+        className="absolute top-10 [--duration:20s] [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)]"
+      >
+        {projects.slice(1, 3).map((p, idx) => (
+          <figure
+            key={idx}
+            className={cn(
+              "relative w-48 cursor-pointer overflow-hidden rounded-xl border p-4",
+              "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+              "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
+              "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none",
+            )}
+          >
+            <div className="flex flex-col">
+              <figcaption className="font-mono text-sm font-bold dark:text-white">
+                {p.name}
+              </figcaption>
+              <div className="text-muted-foreground mt-1 text-xs">{p.role}</div>
+            </div>
+            <blockquote className="mt-2 text-xs">{p.tech}</blockquote>
+          </figure>
+        ))}
+      </Marquee>
+    ),
+  },
+  {
+    Icon: BotIcon,
+    name: "MyAI Dol Bot",
+    description: "Telegram AI assistant development",
+    href: "https://t.me/myaidol_bot",
+    cta: "Try Bot",
     className: "col-span-3 lg:col-span-2",
     background: (
       <Marquee
         pauseOnHover
-        className="absolute top-10 [--duration:20s] [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] "
+        className="absolute top-10 [--duration:20s] [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)]"
       >
-        {files.map((f, idx) => (
+        {projects.slice(2, 4).map((p, idx) => (
           <figure
             key={idx}
             className={cn(
-              "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
+              "relative w-48 cursor-pointer overflow-hidden rounded-xl border p-4",
               "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
               "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
               "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none",
             )}
           >
-            <div className="flex flex-row items-center gap-2">
-              <div className="flex flex-col">
-                <figcaption className="text-sm font-mono dark:text-white ">
-                  {f.name}
-                </figcaption>
-              </div>
+            <div className="flex flex-col">
+              <figcaption className="font-mono text-sm font-bold dark:text-white">
+                {p.name}
+              </figcaption>
+              <div className="text-muted-foreground mt-1 text-xs">{p.role}</div>
             </div>
-            <blockquote className="mt-2 text-xs">{f.body}</blockquote>
+            <blockquote className="mt-2 text-xs">{p.tech}</blockquote>
           </figure>
         ))}
       </Marquee>
     ),
   },
   {
-    Icon: CalendarIcon,
-    name: "Calendar",
-    description: "Use the calendar to filter your files by date.",
+    Icon: LayoutIcon,
+    name: "PIR-EX",
+    description: "Financial platform frontend development",
+    href: "https://pir-ex.ru",
+    cta: "Visit Site",
     className: "col-span-3 lg:col-span-1",
-    href: "#",
-    cta: "Learn more",
     background: (
       <Marquee
         pauseOnHover
-        className="absolute top-10 [--duration:20s] [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] "
+        className="absolute top-10 [--duration:20s] [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)]"
       >
-        {files.map((f, idx) => (
+        {[projects[3], projects[0]].map((p, idx) => (
           <figure
             key={idx}
             className={cn(
-              "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
+              "relative w-48 cursor-pointer overflow-hidden rounded-xl border p-4",
               "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
               "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
               "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none",
             )}
           >
-            <div className="flex flex-row items-center gap-2">
-              <div className="flex flex-col">
-                <figcaption className="text-sm font-mono dark:text-white ">
-                  {f.name}
-                </figcaption>
-              </div>
+            <div className="flex flex-col">
+              <figcaption className="font-mono text-sm font-bold dark:text-white">
+                {p.name}
+              </figcaption>
+              <div className="text-muted-foreground mt-1 text-xs">{p.role}</div>
             </div>
-            <blockquote className="mt-2 text-xs">{f.body}</blockquote>
+            <blockquote className="mt-2 text-xs">{p.tech}</blockquote>
           </figure>
         ))}
       </Marquee>
@@ -172,7 +173,7 @@ const features = [
   },
 ];
 
-export function BentoDemo() {
+export function PortfolioGrid() {
   return (
     <BentoGrid>
       {features.map((feature, idx) => (
