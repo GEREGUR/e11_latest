@@ -45,7 +45,7 @@ export const AboutMe = () => {
           <div className="text-center">
             <Button variant="outline" size="lg" className="group mt-6" asChild>
               <a
-                href="https://drive.google.com/file/d/1W3_J2KiFULwxfJbhPN51Uv-dADwLVn7-/view?usp=sharing"
+                href="https://drive.google.com/file/d/1PsVU6nU_P6xryy6MOESibTovFk4C67jw/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
               >
