@@ -42,7 +42,7 @@ export function DockDemo({ className }: { className?: string }) {
         <DockIcon>
           <div
             onClick={() =>
-              handleDockLinkClick({ link: "https://x.com/GeregurGeregur" })
+              handleDockLinkClick({ link: "https://x.com/george_rubaylo" })
             }
           >
             <FaXTwitter size={24} />

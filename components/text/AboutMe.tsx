@@ -29,7 +29,8 @@ export const AboutMe = () => {
             Hi! My name is Egor Rubailo and I&apos;m a frontend developer from
             Moscow who is passionate about optimization and UX/UI. Over time,
             I&apos;ve developed a skill set in a range of technologies and
-            frameworks, where I really value clean and readable code.
+            frameworks, where I really value clean and readable code. Currently
+            into Rust
           </p>
           <div className="flex flex-wrap justify-center gap-2">
             {skills.map((skill) => (
